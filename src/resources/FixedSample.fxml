@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalculatorController">
+   <children>
+      <VBox fx:id="vBox" prefHeight="400.0" prefWidth="425.0">
+         <children>
+            <TextField fx:id="textField" prefHeight="66.0" prefWidth="419.0" style="-fx-font-size: 30;" />
+            <GridPane prefHeight="323.0" prefWidth="405.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="buttonOne" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="1" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="1">
+                     <center>
+                        <Button fx:id="buttonCos" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="cos" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane>
+                     <center>
+                        <Button fx:id="buttonSin" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="sin" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="4">
+                     <center>
+                        <Button fx:id="buttonLn" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="ln" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="3">
+                     <center>
+                        <Button fx:id="buttonE" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="e" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="2">
+                     <center>
+                        <Button fx:id="buttonTan" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="tan" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="buttonClear" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="CE" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="buttonDel" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="C" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="buttonRadix" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="." />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="buttonSq" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="^" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.rowIndex="1">
+                     <center>
+                        <Button fx:id="buttonSqrt" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="√" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="buttonMinus" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="➖" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="buttonPlus" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="➕" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="buttonThree" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="3" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="buttonTwo" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="2" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <center>
+                        <Button fx:id="buttonMult" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="✖" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <center>
+                        <Button fx:id="buttonSix" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="6" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <center>
+                        <Button fx:id="buttonFive" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="5" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.rowIndex="3">
+                     <center>
+                        <Button fx:id="buttonFour" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="4" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="buttonEight" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="8" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="buttonSeven" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="7" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <center>
+                        <Button fx:id="buttonDivide" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="➗" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="buttonNine" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="9" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="buttonCalculate" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="₌" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <center>
+                        <Button fx:id="buttonZero" minWidth="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="71.0" text="0" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

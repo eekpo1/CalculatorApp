@@ -1,14 +1,9 @@
 package view
 
-import controller.CalculatorController
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
-import javafx.scene.control.Button
-import javafx.scene.control.TextField
-import javafx.scene.layout.GridPane
-import javafx.scene.layout.VBox
 import javafx.stage.Stage
 
 class MyCalculator : Application() {
@@ -36,9 +31,8 @@ class MyCalculator : Application() {
 //
 //        stage.scene = scene
 //        val root: Parent = FXMLLoader.load(MyCalculator::class.java.getResource("sample.fxml"))
-        val loader = FXMLLoader(MyCalculator::class.java.getResource("C:\\Users\\eddie\\Documents\\Calc\\src\\sample.fxml"))
-        val root: Parent = loader.load()
-        val scene = Scene(root)
+        val loader: Parent = FXMLLoader.load(MyCalculator::class.java.classLoader.getResource("resources/FixedSample.fxml"))
+        val scene = Scene(loader)
         stage.scene = scene
         stage.title = "Calculator"
         stage.isResizable = true
@@ -50,5 +44,6 @@ class MyCalculator : Application() {
         super.stop()
         println("Exiting")
     }
+
 
 }

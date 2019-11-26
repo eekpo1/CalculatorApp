@@ -28,7 +28,8 @@ object Calculator {
     private var twoInputOperations = setOf(Operation.ADD, Operation.SUBTRACT, Operation.MULTIPLY,
         Operation.DIVIDE, Operation.POWER)
 
-    private var oneInputOperation = setOf(Operation.SIN, Operation.COS)
+    private var oneInputOperation = setOf(Operation.SIN, Operation.COS, Operation.SQRT, Operation.E, Operation.TAN,
+        Operation.LN)
 
     fun calculate(statement: String) : String {
         // Prepares the statement for parsing and pushes the operations in the operation stack
@@ -158,7 +159,7 @@ object Calculator {
                     '^' -> Operation.POWER
                     '@' -> Operation.COS
                     '#' -> Operation.SIN
-                    '_' -> Operation.SQRT
+                    '√' -> Operation.SQRT
                     'e' -> Operation.E
                     'l' -> Operation.LN
                     't' -> Operation.TAN
