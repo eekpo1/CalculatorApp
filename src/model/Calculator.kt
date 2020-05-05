@@ -11,7 +11,6 @@ import kotlin.test.DefaultAsserter.fail
 fun main() {
     Application.launch(MyCalculator::class.java)
 
-    println(Calculator.calculate("5*5+6*1"))
 }
 
 
@@ -79,14 +78,17 @@ object Calculator {
         }
     }
 
+    /**
+     * This function handles one input operations where its only one operator and one number to calculate
+     */
     private fun handleOneInput(operation: Operation, variable: Number) {
         when (operation) {
             Operation.SIN -> {
-                valueStack.push(sin(variable.toDouble()))
+                valueStack.push(sin(Math.toRadians(variable.toDouble())))
             }
 
             Operation.COS -> {
-                valueStack.push(cos(variable.toDouble()))
+                valueStack.push(cos(Math.toRadians(variable.toDouble())))
             }
 
             Operation.SQRT -> {
@@ -98,7 +100,7 @@ object Calculator {
             }
 
             Operation.TAN -> {
-                valueStack.push(tan(variable.toDouble()))
+                valueStack.push(tan(Math.toRadians(variable.toDouble())))
             }
 
             Operation.LN -> {
@@ -136,7 +138,6 @@ object Calculator {
             .replace("sqrt", Operation.SQRT.type.toString())
             .replace("ln", Operation.LN.type.toString())
 
-        println(preparedStatement)
         val temp = StringBuilder()
         var idx = 0
         for (i in preparedStatement) {
@@ -168,7 +169,6 @@ object Calculator {
                 }
                 operationStack.push(operation)
             }
-//            println(idx)
         }
     }
 }

@@ -1,106 +1,3 @@
-//package controller
-//
-//import javafx.fxml.FXML
-//import javafx.fxml.Initializable
-//import javafx.scene.control.Button
-//
-//import javafx.scene.layout.VBox
-//import java.awt.TextField
-//import java.net.URL
-//import java.util.*
-//
-//
-//class CalculatorController: Initializable {
-//    @FXML
-//    private lateinit var vBox: VBox
-//
-//    @FXML
-//    private lateinit var textField: TextField
-//
-//    @FXML
-//    private lateinit var buttonOne: Button
-//
-//    @FXML
-//    private lateinit var buttonCos: Button
-//
-//    @FXML
-//    private lateinit var buttonSin: Button
-//
-//    @FXML
-//    private lateinit var buttonLn: Button
-//
-//    @FXML
-//    private lateinit var buttonE: Button
-//
-//    @FXML
-//    private lateinit var buttonTan: Button
-//
-//    @FXML
-//    private lateinit var buttonClear: Button
-//
-//    @FXML
-//    private lateinit var buttonDel: Button
-//
-//    @FXML
-//    private lateinit var buttonRadix: Button
-//
-//    @FXML
-//    private lateinit var buttonSq: Button
-//
-//    @FXML
-//    private lateinit var buttonSqrt: Button
-//
-//    @FXML
-//    private lateinit var buttonMinus: Button
-//
-//    @FXML
-//    private lateinit var buttonPlus: Button
-//
-//    @FXML
-//    private lateinit var buttonThree: Button
-//
-//    @FXML
-//    private lateinit var buttonTwo: Button
-//
-//    @FXML
-//    private lateinit var buttonMult: Button
-//
-//    @FXML
-//    private lateinit var buttonSix: Button
-//
-//    @FXML
-//    private lateinit var buttonFive: Button
-//
-//    @FXML
-//    private lateinit var buttonFour: Button
-//
-//    @FXML
-//    private lateinit var buttonEight: Button
-//
-//    @FXML
-//    private lateinit var buttonSeven: Button
-//
-//    @FXML
-//    private lateinit var buttonDivide: Button
-//
-//    @FXML
-//    private lateinit var buttonNine: Button
-//
-//    @FXML
-//    private lateinit var buttonCalculate: Button
-//
-//    @FXML
-//    private lateinit var buttonZero: Button
-//
-//    override fun initialize(p0: URL?, p1: ResourceBundle?) {
-//        buttonSeven.setOnAction {
-//            textField.text.plus("7")
-//        }
-//
-//
-//    }
-//
-//}
 
 /**
  * Sample Skeleton for 'sample.fxml' Controller Class
@@ -111,6 +8,7 @@ import javafx.fxml.FXML
 import javafx.scene.control.Button
 import javafx.scene.control.TextField
 import javafx.scene.layout.VBox
+import model.Calculator
 import java.net.URL
 import java.util.*
 
@@ -219,27 +117,55 @@ class CalculatorController {
         buttonNine.setOnAction { textField.text = textField.text.plus("9") }
         buttonRadix.setOnAction { textField.text = textField.text.plus(".") }
         buttonZero.setOnAction { textField.text = textField.text.plus("0") }
+
+        // Operators that are simple
         buttonMinus.setOnAction { textField.text = textField.text.plus("-") }
         buttonPlus.setOnAction { textField.text = textField.text.plus("+") }
         buttonDivide.setOnAction { textField.text = textField.text.plus("/") }
         buttonSqrt.setOnAction { textField.text = textField.text.plus("√") }
         buttonSq.setOnAction { textField.text = textField.text.plus("^") }
+        buttonMult.setOnAction { textField.text = textField.text.plus("*") }
 
         // A bit more complex button listeners
         buttonSin.setOnAction {
-            textField.text = if (textField.length == 0) textField.text.plus("sin") else textField.text.plus("*sin")
+            textField.text = if (textField.length == 0 || !textField.text.last().isDigit()) textField.text.plus("sin ")
+            else textField.text.plus("*sin ")
         }
 
         buttonCos.setOnAction {
-            textField.text = if (textField.length == 0) textField.text.plus("cos") else textField.text.plus("*cos")
+            textField.text = if (textField.length == 0 || !textField.text.last().isDigit()) textField.text.plus("cos ")
+            else textField.text.plus("*cos ")
         }
 
-        buttonSin.setOnAction {
-            textField.text = if (textField.length == 0) textField.text.plus("sin") else textField.text.plus("*sin")
+        buttonTan.setOnAction {
+            textField.text = if (textField.length == 0 || !textField.text.last().isDigit()) textField.text.plus("tan ")
+            else textField.text.plus("*tan ")
         }
 
-        buttonSin.setOnAction {
-            textField.text = if (textField.length == 0) textField.text.plus("sin") else textField.text.plus("*sin")
+        buttonE.setOnAction {
+            textField.text = if (textField.length == 0 || !textField.text.last().isDigit()) textField.text.plus("e ")
+            else textField.text.plus("*e ")
+        }
+
+        buttonLn.setOnAction {
+            textField.text = if (textField.length == 0 || !textField.text.last().isDigit())
+                textField.text.plus("ln ") else textField.text.plus("*ln ")
+        }
+
+        buttonE.setOnAction {
+            textField.text = if (textField.length == 0 || !textField.text.last().isDigit()) textField.text.plus("e ")
+            else textField.text.plus("*e ")
+        }
+
+        buttonDel.setOnAction { if (textField.length > 0) textField.text =
+            textField.text.substring(0, textField.length - 1) }
+
+        buttonClear.setOnAction { textField.text = "" }
+
+        buttonCalculate.setOnAction {
+            val ans = Calculator.calculate(textField.text)
+            if (ans.contains("Inf")) textField.text = "NaN"
+            else textField.text = ans
         }
 
     }
